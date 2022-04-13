@@ -1,0 +1,140 @@
+import React, { memo } from "react";
+import {
+  Typography,
+  Grid,
+  Card,
+  Container,
+  CardMedia,
+  CardContent,
+  CardActions,
+} from "@mui/material";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import { spacing } from "@mui/system";
+import Avatar from "@mui/material/Avatar";
+import operating from "../../images/operating.png";
+import coders from "../../images/coders.svg";
+import frontend from "../../images/frontend.png";
+import login from "../../images/login.png";
+import testing from "../../images/testing.png";
+import backend from "../../images/backend.png";
+import aj2843 from "../../images/aj2843.jpg";
+
+import handcoding from "../../images/handcoding.png";
+import mobilephone from "../../images/mobilephone.png";
+
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+const testar = [1, 2, 3, 4, 5, 6];
+const test = [
+  {
+    id: 1,
+    title: "App Development",
+    image: operating,
+    description:
+      "Mauris quis sem erat. Sed pulvinar, lectus in ultricies elementum.",
+  },
+  {
+    id: 2,
+    title: "Web Design",
+    image: operating,
+    description:
+      "Mauris quis sem erat. Sed pulvinar, lectus in ultricies elementum.",
+  },
+  {
+    id: 3,
+    title: "Mobile UI",
+    image: frontend,
+    description:
+      "Mauris quis sem erat. Sed pulvinar, lectus in ultricies elementum.",
+  },
+  {
+    id: 4,
+    title: "Databases",
+    image: handcoding,
+    description:
+      "Mauris quis sem erat. Sed pulvinar, lectus in ultricies elementum.",
+  },
+  {
+    id: 5,
+    title: "UX Design",
+    image: backend,
+    description:
+      "Mauris quis sem erat. Sed pulvinar, lectus in ultricies elementum.",
+  },
+  {
+    id: 6,
+    title: "Mobile UI",
+    image: backend,
+    description:
+      "Mauris quis sem erat. Sed pulvinar, lectus in ultricies elementum.",
+  },
+];
+
+function Testing() {
+  return (
+    <>
+      <Box sx={{ height: "80%", width: "60%", flexGrow: 2 }}>
+        <Grid
+          container
+          spacing={1}
+          direction="row"
+          justifyContent={"space-between"}
+          sx={{ flexWrap: "wrap", ml: 38, mt: 2, mr: -16 }}
+        >
+          {test.map((cardElement, index) => (
+            <Grid
+              item
+              xs={12}
+              sm={4}
+              sx={{
+                marginBlockEnd: 3.5,
+                borderRadius: 1,
+                flexWrap: "wrap",
+                justifyContent: "center",
+              }}
+            >
+              <Card sx={{ maxWidth: "375px" }}>
+                <CardMedia
+                  component="img"
+                  sx={{
+                    ml: 6,
+                    mt: 2,
+                    width: "40%",
+                    display: "block",
+                    justifyContent: "center",
+                    flexDirection: "row",
+                    xs: "none",
+                  }}
+                  src={cardElement.image}
+                />
+                <CardContent>
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    color="text.secondary"
+                    sx={{ ml: 2, mt: -1 }}
+                  >
+                    {cardElement.title}
+                  </Typography>
+
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ ml: 2 }}
+                  >
+                    {cardElement.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </>
+  );
+}
+
+export default memo(Testing);
